@@ -7,44 +7,34 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="ingredientlist.js"></script>
-		<script src="results.js"></script>
+		<!--INCLUDED JS FILES-->
+		<script src="dynamicForm.js"></script>
+		<script src="recipeSerializer.js"></script>
+		<!---->
 	</head>
 	<body>
-
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row col-sm-3">
-				<h1 class="text-center">Ingredient List</h1>
-				<div class="input-group">
-					<input type="text" name="ingredient" class="form-control" id="ingredientInput">
-					<div class="input-group-btn">
-						<button type="submit" class="btn btn-default btn-md btn-block" id="addIngr">
-							<i class="glyphicon glyphicon-search"></i>
-						</button>
+				<div class="control-group" id="fields">
+					<h3 class="control-label" for="field1">Ingredient List</h3>
+					<div class="controls">
+						<form role="form" autocomplete="off" action="#">
+							<!--TO ADD OTHER INPUTS, PUT THEM BETWEEN THESE LINES-->
+							<!----------------------------------------------------->
+							<div class="entry input-group col-xs-12">
+								<input class="form-control ingredient" name="ingredient" type="text" placeholder="Add Ingredient"/>
+								<span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+							</div>
+						</form>
+						<br>
+						<input type="button" class="btn btn-md btn-block btn-primary recipeSubmit" id="searchRec"
+							   value="Search Recipes">
 					</div>
 				</div>
-				<table id="ingrTable" class="table  order-list ">
-					<thead>
-					<tr>
-						<th class="col-sm-8">
-							Ingredient
-						</th>
-						<th class="col-sm-4">
-							Action
-						</th>
-					</tr>
-					</thead>
-					<tbody>
-					</tbody>
-					<tfoot>
-					<tr>
-						<td colspan="2" style="text-align: left;">
-							<input type="button" class="btn btn-md btn-block btn-primary" id="searchRec"
-								   value="Search Recipes">
-						</td>
-					</tr>
-					</tfoot>
-				</table>
 			</div>
 		</div>
 	</body>
